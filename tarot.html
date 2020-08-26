@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot</title>
+    <style>
+        html{
+            background-color: rgb(119, 228, 228);
+            background-image: url(img/wall.jpg);            
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        img{
+            height: 258px;  /* Kaarti kõrgus 258px */
+            width: 146px;   /* Kaarti laius 146px */
+            box-shadow: 15px 14px 20px -1px rgba(74,45,35,1);
+        }
+        .buttons{
+            align-items: center;
+            color: white;
+            box-shadow: rgba(36, 33, 87, 0.767);
+            left: 50%;
+            transform: translateX(-50%);
+            position: fixed;
+        }
+        .button{
+            background-color: rgb(10, 69, 109);
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 12px;
+            margin: 12px;
+            margin-top: 40px;    
+            margin-bottom: 20px;        
+            border-radius: 9px;            
+            border: none;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function newCard(){
+            var newElement = document.createElement('img');
+            var y = Math.floor(Math.random() * 78);
+            
+            newElement.src = "img/tarot" + y + ".png";
+            console.log(newElement);
+
+            document.body.appendChild(newElement);            
+        }
+    </script>
+</head>
+<body align =  center>
+    <div class="buttons">
+        <button class="button" type="button" onclick="newCard()">Choose card</button>
+        <button class="button" type="button" onclick="window.location.reload();">Clear</button>
+    </div id="x">    
+    </div>
+</body>
+</html>
